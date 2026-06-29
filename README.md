@@ -102,21 +102,21 @@ Dados/
 ---
 
 ## Ejemplos de Tiradas
-<detail>
+<details>
     <summary> Versión rápida </summary>
         <p align="center">
             <img src=".github/assets/Rapido_Estadistica.png">
             <img src=".github/assets/Rapido_Historial.png">
         </p>
-</detail>
+</details>
 
-<detail>
+<details>
     <summary> Versión lenta </summary>
         <p align="center">
             <img src=".github/assets/Lenta_Estadistica.png">
             <img src=".github/assets/Lenta_Historial.png">
         </p>
-</detail>
+</details>
 
 
 ## Autor
