@@ -7,45 +7,23 @@
 #include <chrono>
 #include <ctime>   
 
+// Borrar archivos
+#include <filesystem>
+
 // Mis archivos headers
 #include "include/dado.hh"
+#include "include/menu.hh"
 
 using namespace std;
 
-void valorar_respuesta(bool& b, const string& s) {
-    if(s == "Y") {
-        b = true;
-    }
-    else if(s == "N") {
-        b = false;
-    } 
-    else {
-        cout << "Respuesta incorrecta, prueba de nuevo" << endl;
-        exit(1);
-    }
-}
 
 int main() {
-    // Inicializar la semilla (solo se debe llamar una vez al inicio)
-    srand(time(NULL));
-
-    size_t cont = 0;
-    size_t tiradas;
+    // Parametros iniciales
+    long long tiradas, cont = 0;
     bool rapido;
-    string respuesta;
-
-    cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
-    cout << "Bienvenido al simulador de tirada de dados!" << endl;
-    cout << "A continuacion, introduce el numero de veces que quieres tirar un dado: ";
-    cin >> tiradas;
-    cout << "Version rapida? Y/N: ";
-    cin  >> respuesta;
-
-    valorar_respuesta(rapido, respuesta);
-
-    cout << "El historial de tiradas se vera en out/historial.txt, y su estadistica en out/estadistica.txt" << endl;
-    cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
-
+    
+    // Muesta el menu inicial
+    menu_inicial(tiradas, rapido);
 
     // Inicializar a 0 todos los parametros
     DadoInfo DadoInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -60,7 +38,7 @@ int main() {
     auto time_inicio = chrono::high_resolution_clock::now();
 
     // Crea un archivo llamado "historial.txt" en la carpeta out
-    if(not rapido) ofstream historial("out/historial_" + to_string(time_epoch) + ".txt");
+    ofstream historial("out/historial_" + to_string(time_epoch) + ".txt");
 
     // Crea un archivo llamado "estadistica.txt" en la carpeta out
     ofstream estadistica("out/estadistica_" + to_string(time_epoch) + ".txt");
