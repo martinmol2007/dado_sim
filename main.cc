@@ -10,8 +10,20 @@
 // Mis archivos headers
 #include "include/dado.hh"
 
-
 using namespace std;
+
+void valorar_respuesta(bool& b, const string& s) {
+    if(s == "Y") {
+        b = true;
+    }
+    else if(s == "N") {
+        b = false;
+    } 
+    else {
+        cout << "Respuesta incorrecta, prueba de nuevo" << endl;
+        exit(1);
+    }
+}
 
 int main() {
     // Inicializar la semilla (solo se debe llamar una vez al inicio)
@@ -19,11 +31,18 @@ int main() {
 
     size_t cont = 0;
     size_t tiradas;
+    bool rapido;
+    string respuesta;
 
     cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     cout << "Bienvenido al simulador de tirada de dados!" << endl;
     cout << "A continuacion, introduce el numero de veces que quieres tirar un dado: ";
     cin >> tiradas;
+    cout << "Version rapida? Y/N: ";
+    cin  >> respuesta;
+
+    valorar_respuesta(rapido, respuesta);
+
     cout << "El historial de tiradas se vera en out/historial.txt, y su estadistica en out/estadistica.txt" << endl;
     cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
@@ -56,7 +75,7 @@ int main() {
         int numAleatorio =  distrib(gen); 
 
         // Seleciona el dado que ha salido y escribelo en el archivo "historial"
-        selecionar_dado(numAleatorio, historial, DadoInfo);
+        selecionar_dado(numAleatorio, historial, DadoInfo, rapido);
 
         cont++;
     }

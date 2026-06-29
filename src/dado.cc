@@ -16,30 +16,42 @@ void sacar_dado(ostream& out, const Matriz& m, int n) {
     return;
 }
 
-void selecionar_dado(int n, ostream& historial, DadoInfo& d) {
+void selecionar_dado(int n, ostream& historial, DadoInfo& d, const bool& b) {
     if(n == 1) {
         d.veces_1 += 1;
-        sacar_dado(historial, CARA_1, n);
+        if(not b) {
+            sacar_dado(historial, CARA_1, n);
+        }
     }
     else if(n == 2) {
         d.veces_2 += 1;
-        sacar_dado(historial, CARA_2, n);
+        if(not b) {
+            sacar_dado(historial, CARA_2, n);
+        }
     }
     else if(n == 3) {
         d.veces_3 += 1;
-        sacar_dado(historial, CARA_3, n);
+        if(not b) {
+            sacar_dado(historial, CARA_3, n);
+        }
     }
     else if(n == 4) {
         d.veces_4 += 1;
-        sacar_dado(historial, CARA_4, n);
+        if(not b) {
+            sacar_dado(historial, CARA_4, n);
+        }
     }
     else if(n == 5) {
         d.veces_5 += 1;
-        sacar_dado(historial, CARA_5, n);
+        if(not b) {
+            sacar_dado(historial, CARA_5, n);
+        }
     }   
     else if(n == 6) {
         d.veces_6 += 1;
-        sacar_dado(historial, CARA_6, n);
+        if(not b) {
+            sacar_dado(historial, CARA_6, n);
+        }
     }
     else {
         cerr << "Error, numero de cara invalida" << endl;

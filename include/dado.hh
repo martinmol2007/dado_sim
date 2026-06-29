@@ -88,7 +88,7 @@ void sacar_dado(std::ostream& out, const Matriz& m, int n);
  * @param historial Canal de salida para guardar el historial
  * @param d Info de las tiradas
  */
-void selecionar_dado(int n, std::ostream& historial, DadoInfo& d);
+void selecionar_dado(int n, std::ostream& historial, DadoInfo& d, cosnt bool& b);
 
 
 /**
