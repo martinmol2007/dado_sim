@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Para el numero aleatorio
+// Para el número aleatorio
 #include <random>
 
 // Para medir el tiempo
@@ -18,15 +18,15 @@ using namespace std;
 
 
 int main() {
-    // Parametros iniciales
+    // Parámetros iniciales
     long long tiradas, cont = 0;
     bool rapido;
     
-    // Muesta el menu inicial
+    // Muestra el menú inicial
     menu_inicial(tiradas, rapido);
 
     // Inicializar a 0 todos los parametros
-    DadoInfo DadoInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    DadoInfo DadoInfo = {0, 0, 0, 0, 0, 0, 0};
 
     // Asigna en el primer momento todas las tiradas que se van a realizar
     DadoInfo.total = tiradas;
@@ -43,7 +43,7 @@ int main() {
     // Crea un archivo llamado "estadistica.txt" en la carpeta out
     ofstream estadistica("out/estadistica_" + to_string(time_epoch) + ".txt");
 
-    // Consigue un numero aleatorio
+    // Consigue un número aleatorio
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> distrib(1, 6);
@@ -52,19 +52,19 @@ int main() {
         // Generar un número aleatorio entre 1 y 6 (las caras del dado)
         int numAleatorio =  distrib(gen); 
 
-        // Seleciona el dado que ha salido y escribelo en el archivo "historial"
+        // Selecciona el dado que ha salido y escríbelo en el archivo "historial"
         selecionar_dado(numAleatorio, historial, DadoInfo, rapido);
 
         cont++;
     }
     
-    // Inicio del programa (para medir el tiempo)
+    // Final del programa (para medir el tiempo)
     auto time_final = chrono::high_resolution_clock::now();
 
-    // Calcula la duracion del programa
+    // Calcula la duración del programa
     auto duracion = chrono::duration_cast<chrono::milliseconds>(time_final - time_inicio).count();
 
-    // Sacar estadisticas
+    // Sacar estadísticas
     sacar_estadistica(estadistica, DadoInfo);
     estadistica << "Tiempo total de la simulacion: " << duracion << " ms" << endl;
 
