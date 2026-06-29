@@ -73,7 +73,7 @@ Esto genera el ejecutable `program.exe`.
 
 ## Uso
 
-```bash
+```
 ./program.exe       # Ejecuta el programa
 ```
 
