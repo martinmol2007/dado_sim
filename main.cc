@@ -29,7 +29,9 @@ int main() {
     cout << "El historial de tiradas se vera en out/historial.txt, y su estadistica en out/estadistica.txt" << endl;
     cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
-    DadoInfo DadoInfo;
+    DadoInfo DadoInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    
 
     // Asigna en el primer momento todas las tiradas que se van a realizar
     DadoInfo.total = tiradas;
@@ -45,7 +47,7 @@ int main() {
     }
     
     
-    
+    sacar_estadistica(estadistica, DadoInfo);
 
     
 

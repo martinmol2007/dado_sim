@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void sacar_dado(ofstream& out, const Matriz& m, int n) {
+void sacar_dado(ostream& out, const Matriz& m, int n) {
     out << "Ha salido un " << n << "!" << endl;
     for(int i = 0; i < m.size(); i++) {
         for(int j = 0; j < m[0].size(); j++) {
@@ -16,7 +16,7 @@ void sacar_dado(ofstream& out, const Matriz& m, int n) {
     return;
 }
 
-void selecionar_dado(int n, ofstream& historial, DadoInfo& d) {
+void selecionar_dado(int n, ostream& historial, DadoInfo& d) {
     if(n == 1) {
         d.veces_1 += 1;
         sacar_dado(historial, CARA_1, n);
@@ -47,6 +47,45 @@ void selecionar_dado(int n, ofstream& historial, DadoInfo& d) {
     }
 }
 
-void sacar_estadistica(ofstream& estadistica, const DadoInfo& d) {
+void sacar_estadistica(ostream& estadistica, DadoInfo& d) {
+    // Calcular porcentajes
 
+    // Debug
+    estadistica << d.veces_1 << endl;
+    estadistica << d.veces_2 << endl;
+    estadistica << d.veces_3 << endl;
+    estadistica << d.veces_4 << endl;
+    estadistica << d.veces_5 << endl;
+    estadistica << d.veces_5 << endl;
+
+    d.porcentaje_1 = (d.veces_1 * 100.0) / d.total;
+    d.porcentaje_2 = (d.veces_2 * 100.0) / d.total;
+    d.porcentaje_3 = (d.veces_3 * 100.0) / d.total;
+    d.porcentaje_4 = (d.veces_4 * 100.0) / d.total;
+    d.porcentaje_5 = (d.veces_5 * 100.0) / d.total;
+    d.porcentaje_6 = (d.veces_6 * 100.0) / d.total;
+
+    
+
+    estadistica << "Estadistia de las tiradas: " << endl;
+    /*
+    for(int i = 0; i < v.size(); i++) {
+        estadistica << "Cara " << i+1 << " " << endl;
+        int cien = 100;
+        int num  = v[i];
+
+        while(num != 0) {
+            estadistica << "|";
+            num--;
+            cien--;
+        }
+
+        while(cien != 0) {
+            estadistica << ".";
+            cien--;
+        }
+
+        estadistica << endl;
+    }
+    */
 }

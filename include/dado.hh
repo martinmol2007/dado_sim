@@ -78,7 +78,7 @@ const Matriz CARA_6 = {
  * @param m Matriz con la cara del dado selecionado
  * @param n Numero de la cara del dado
  */
-void sacar_dado(std::ofstream& out, const Matriz& m, int n);
+void sacar_dado(std::ostream& out, const Matriz& m, int n);
 
 
 /**
@@ -88,7 +88,7 @@ void sacar_dado(std::ofstream& out, const Matriz& m, int n);
  * @param historial Canal de salida para guardar el historial
  * @param d Info de las tiradas
  */
-void selecionar_dado(int n, std::ofstream& historial, DadoInfo& d);
+void selecionar_dado(int n, std::ostream& historial, DadoInfo& d);
 
 
 /**
@@ -97,6 +97,6 @@ void selecionar_dado(int n, std::ofstream& historial, DadoInfo& d);
  * @param estadistica Archivo en el que se van a escribir
  * @param d Info de todas las tiradas
  */
-void sacar_estadistica(std::ofstream& estadistica, const DadoInfo& d);
+void sacar_estadistica(std::ostream& estadistica, DadoInfo& d);
 
 #endif
