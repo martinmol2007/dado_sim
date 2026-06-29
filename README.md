@@ -1,4 +1,4 @@
-# 🎲 Dado-Sim — Simulador de tirada de dados en C++ 🎲
+# 🎲 DadoSim — Simulador de tirada de dados en C++ 🎲
 
 Simulador de dados por línea de comandos escrito en C++.
 Lanza un dado de 6 caras N veces, guarda el historial visual en un archivo y genera automáticamente una estadística con gráfico de barras en otro.
