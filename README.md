@@ -55,8 +55,8 @@ Tiempo total de la simulación: 3 ms
 
 ## Comandos
 ```
-- `make program`        # Compila el programa (crea la carpeta "out" si no existe)
-- `make clean`          # Borra todo los archivos dentro de la carpeta "out"
+- make program        # Compila el programa (crea la carpeta "out" si no existe)
+- make clean          # Borra todo los archivos dentro de la carpeta "out"
 ```
 
 ---
@@ -74,7 +74,7 @@ Esto genera el ejecutable `program.exe`.
 ## Uso
 
 ```bash
-./program.exe
+./program.exe       # Ejecuta el programa
 ```
 
 El programa te pedirá:
