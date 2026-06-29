@@ -30,13 +30,16 @@ int main() {
     cout << "///////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
     DadoInfo DadoInfo;
+
+    // Asigna en el primer momento todas las tiradas que se van a realizar
+    DadoInfo.total = tiradas;
     
     while(cont != tiradas) {
         // Generar un número aleatorio entre 1 y 6 (las caras del dado)
         int numAleatorio = 1 + rand() % 6;    
 
-        
-
+        // Seleciona el dado que ha salido y escribelo en el archivo "historial"
+        selecionar_dado(numAleatorio, historial, DadoInfo);
 
         cont++;
     }

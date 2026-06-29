@@ -94,18 +94,22 @@ const Matriz CARA_6 = {
 
 
 /**
- * @brief Saca un dado por el canal de salida
+ * @brief Sacar el dado por el canal out
  * 
- * @param n Numero de la cara del dado a sacar
+ * @param out Canal de salida
+ * @param m Matriz con la cara del dado selecionado
+ * @param n Numero de la cara del dado
  */
-void sacar_dado(std::ofstream& out, const Matriz& m);
+void sacar_dado(std::ofstream& out, const Matriz& m, int n);
 
 
 /**
- * @brief Selecciona un dado y lo saca
+ * @brief Seleciona un dado y augmenta sus estadisticas
  * 
- * @param n Numero de la cara a sacar
+ * @param n Numero de la cara del dado que ha salido
+ * @param historial Canal de salida para guardar el historial
+ * @param d Info de las tiradas
  */
-void selecionar_dado(int n, std::ofstream& historial);
+void selecionar_dado(int n, std::ofstream& historial, DadoInfo& d);
 
 #endif
