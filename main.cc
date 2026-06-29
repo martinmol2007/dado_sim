@@ -1,11 +1,11 @@
 #include <iostream>
 
 // Para el numero aleatorio
-#include <cstdlib> 
-#include <ctime>   
+#include <random>
 
 // Para medir el tiempo
 #include <chrono>
+#include <ctime>   
 
 // Mis archivos headers
 #include "include/dado.hh"
@@ -41,14 +41,19 @@ int main() {
     auto time_inicio = chrono::high_resolution_clock::now();
 
     // Crea un archivo llamado "historial.txt" en la carpeta out
-    ofstream historial("out/historial_" + to_string(time_epoch));
+    ofstream historial("out/historial_" + to_string(time_epoch) + ".txt");
 
     // Crea un archivo llamado "estadistica.txt" en la carpeta out
-    ofstream estadistica("out/estadistica_" + to_string(time_epoch));
+    ofstream estadistica("out/estadistica_" + to_string(time_epoch) + ".txt");
+
+    // Consigue un numero aleatorio
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distrib(1, 6);
 
     while(cont != tiradas) {
         // Generar un número aleatorio entre 1 y 6 (las caras del dado)
-        int numAleatorio = 1 + rand() % 6;    
+        int numAleatorio =  distrib(gen); 
 
         // Seleciona el dado que ha salido y escribelo en el archivo "historial"
         selecionar_dado(numAleatorio, historial, DadoInfo);
@@ -60,10 +65,11 @@ int main() {
     auto time_final = chrono::high_resolution_clock::now();
 
     // Calcula la duracion del programa
-    auto duracion = chrono::duration_cast<chrono::seconds>(time_inicio - time_final).count();
+    auto duracion = chrono::duration_cast<chrono::milliseconds>(time_final - time_inicio).count();
 
+    // Sacar estadisticas
     sacar_estadistica(estadistica, DadoInfo);
-    estadistica << "Tiempo total de la simulacion: " << duracion << endl;
+    estadistica << "Tiempo total de la simulacion: " << duracion << " ms" << endl;
 
     return 0;
 }
