@@ -101,6 +101,24 @@ Dados/
 
 ---
 
+## Ejemplos de Tiradas
+<detail>
+    <summary> Versión rápida </summary>
+        <p align="center">
+            <img src=".github/assets/Rapido_Estadistica.png">
+            <img src=".github/assets/Rapido_Historial.png">
+        </p>
+</detail>
+
+<detail>
+    <summary> Versión lenta </summary>
+        <p align="center">
+            <img src=".github/assets/Lenta_Estadistica.png">
+            <img src=".github/assets/Lenta_Historial.png">
+        </p>
+</detail>
+
+
 ## Autor
 
 Martin (@martinmol2007)
