@@ -49,15 +49,6 @@ void selecionar_dado(int n, ostream& historial, DadoInfo& d) {
 
 void sacar_estadistica(ostream& estadistica, DadoInfo& d) {
     // Calcular porcentajes
-
-    // Debug
-    estadistica << d.veces_1 << endl;
-    estadistica << d.veces_2 << endl;
-    estadistica << d.veces_3 << endl;
-    estadistica << d.veces_4 << endl;
-    estadistica << d.veces_5 << endl;
-    estadistica << d.veces_5 << endl;
-
     d.porcentaje_1 = (d.veces_1 * 100.0) / d.total;
     d.porcentaje_2 = (d.veces_2 * 100.0) / d.total;
     d.porcentaje_3 = (d.veces_3 * 100.0) / d.total;
@@ -65,12 +56,12 @@ void sacar_estadistica(ostream& estadistica, DadoInfo& d) {
     d.porcentaje_5 = (d.veces_5 * 100.0) / d.total;
     d.porcentaje_6 = (d.veces_6 * 100.0) / d.total;
 
-    
+    vector<long long> v = {d.porcentaje_1, d.porcentaje_2, d.porcentaje_3, d.porcentaje_4, d.porcentaje_5, d.porcentaje_6};
 
     estadistica << "Estadistia de las tiradas: " << endl;
-    /*
+
     for(int i = 0; i < v.size(); i++) {
-        estadistica << "Cara " << i+1 << " " << endl;
+        estadistica << "Cara " << i+1 << ": ";
         int cien = 100;
         int num  = v[i];
 
@@ -85,7 +76,8 @@ void sacar_estadistica(ostream& estadistica, DadoInfo& d) {
             cien--;
         }
 
-        estadistica << endl;
+        estadistica << " " << v[i] << "%" << endl;
     }
-    */
+
+    return;
 }

@@ -50,6 +50,5 @@ int main() {
     sacar_estadistica(estadistica, DadoInfo);
 
     
-
     return 0;
 }
