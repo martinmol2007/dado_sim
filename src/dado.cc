@@ -16,7 +16,7 @@ void sacar_dado(ostream& out, const Matriz& m, int n) {
     return;
 }
 
-void selecionar_dado(int n, ostream& historial, DadoInfo& d, const bool& b) {
+void selecionar_dado(int n, ostream& historial, DadoInfo& d, bool& b) {
     if(n == 1) {
         d.veces_1 += 1;
         if(not b) {

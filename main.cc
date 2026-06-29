@@ -60,7 +60,7 @@ int main() {
     auto time_inicio = chrono::high_resolution_clock::now();
 
     // Crea un archivo llamado "historial.txt" en la carpeta out
-    ofstream historial("out/historial_" + to_string(time_epoch) + ".txt");
+    if(not rapido) ofstream historial("out/historial_" + to_string(time_epoch) + ".txt");
 
     // Crea un archivo llamado "estadistica.txt" en la carpeta out
     ofstream estadistica("out/estadistica_" + to_string(time_epoch) + ".txt");
