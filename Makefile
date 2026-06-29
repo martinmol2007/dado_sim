@@ -2,4 +2,6 @@ program:
 	g++ main.cc src/dado.cc -o program.exe
 
 clean:
-	rm -rm out/*
+	rm -r out/*.txt
+
+.PHONY clean program
