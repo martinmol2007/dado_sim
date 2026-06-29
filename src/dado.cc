@@ -1,9 +1,9 @@
-#include "include/dado.hh"
+#include "../include/dado.hh"
 
 using namespace std;
 
 
-void sacar_dado(ostream& out, const Matriz& m, int n) {
+void sacar_dado(ofstream& out, const Matriz& m, int n) {
     out << "Ha salido un " << n << "!" << endl;
     for(int i = 0; i < m.size(); i++) {
         for(int j = 0; j < m[0].size(); j++) {
@@ -45,4 +45,8 @@ void selecionar_dado(int n, ofstream& historial, DadoInfo& d) {
         cerr << "Error, numero de cara invalida" << endl;
         exit(1);
     }
+}
+
+void sacar_estadistica(ofstream& estadistica, const DadoInfo& d) {
+
 }
