@@ -16,7 +16,7 @@ void sacar_dado(ostream& out, const Matriz& m, int n) {
     return;
 }
 
-void selecionar_dado(int n, ostream& historial, DadoInfo& d, bool& b) {
+void seleccionar_dado(int n, ostream& historial, DadoInfo& d, bool& b) {
     if(n == 1) {
         d.veces_1 += 1;
         if(not b) {
@@ -59,7 +59,7 @@ void selecionar_dado(int n, ostream& historial, DadoInfo& d, bool& b) {
     }
 }
 
-void sacar_estadistica(ostream& estadistica, DadoInfo& d) {
+void sacar_estadistica(ostream& estadistica, const DadoInfo& d) {
     // Calcular porcentajes
     double porcentaje_1 = (d.veces_1 * 100.0) / d.total;
     double porcentaje_2 = (d.veces_2 * 100.0) / d.total;

@@ -53,7 +53,7 @@ int main() {
         int numAleatorio =  distrib(gen); 
 
         // Selecciona el dado que ha salido y escríbelo en el archivo "historial"
-        selecionar_dado(numAleatorio, historial, DadoInfo, rapido);
+        seleccionar_dado(numAleatorio, historial, DadoInfo, rapido);
 
         cont++;
     }

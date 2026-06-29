@@ -37,7 +37,7 @@ void inline menu_inicial(long long& tiradas, bool& rapido) {
     std::string linea;
     std::cin >> linea;
     valorar_tiradas(linea);
-    tiradas = stoi(linea);
+    tiradas = stoll(linea);
     std::cout << "¿Versión rápida? Y/N: ";
     std:: string respuesta;
     std::cin  >> respuesta;
