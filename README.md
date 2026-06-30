@@ -1,5 +1,7 @@
 # 🎲 DadoSim — Simulador de tirada de dados en C++ 🎲
 
+> 🇬🇧 [English version available here](https://github.com/martinmol2007/dice-sim) <!-- Sustituye el enlace por el path correcto cuando crees el README en inglés -->
+
 Simulador de dados por línea de comandos escrito en C++.
 Lanza un dado de 6 caras N veces, guarda el historial visual en un archivo y genera automáticamente una estadística con gráfico de barras en otro.
 
